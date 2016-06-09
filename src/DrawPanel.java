@@ -42,25 +42,23 @@ class DrawPanel extends JPanel {
                 	}
                 }
                 if(DrawPanel.currentaction==MyAction.edgedelete){
-                	if(true){
-                		MyEdge me1=null;
-                		if(el==null)
-                		 el=new java.awt.geom.Ellipse2D.Double(e.getX()-5,e.getY()-5,10,10);
-                		else{ 
-                			el.x=e.getX()-5;
-                			el.y=e.getY()-5;
-                		}
-                		for(MyEdge me:graph.edges){
-                			if(me.intersects(el.getBounds2D())){
-                				me1=me;
-                				break;
-                			}
-                		}
-                		if(me1!=null) graph.edges.remove(me1);
-                		
-                		repaint();
-                	}
-                }
+					MyEdge me1=null;
+					if(el==null)
+                     el=new java.awt.geom.Ellipse2D.Double(e.getX()-5,e.getY()-5,10,10);
+                    else{
+                        el.x=e.getX()-5;
+                        el.y=e.getY()-5;
+                    }
+					for(MyEdge me:graph.edges){
+                        if(me.intersects(el.getBounds2D())){
+                            me1=me;
+                            break;
+                        }
+                    }
+					if(me1!=null) graph.edges.remove(me1);
+
+					repaint();
+				}
                 if(DrawPanel.currentaction==MyAction.findpath){
                 	Point2D mp;
                 	if((mp=graph.getMyNodeAt(e.getPoint()))!=null){

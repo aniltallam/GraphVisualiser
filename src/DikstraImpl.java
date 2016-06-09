@@ -5,11 +5,11 @@ import java.util.HashMap;
  * Created by Pushparaj Motimarri
  */
 class DikstraImpl{
-	HashMap<Node,DksRow> nos =new HashMap<Node,DksRow>();
+	HashMap<Node,DksRow> nos = new HashMap<>();
 	int visitedcount=0;
 	private ArrayList<Node> nodes;
 	private ArrayList<Edge> edges;
-	public ArrayList<Edge> path=new ArrayList<Edge>();
+	public ArrayList<Edge> path= new ArrayList<>();
 	public DikstraImpl(ArrayList<Node> nodes, ArrayList<Edge> edges){
 		this.nodes=nodes;
 		this.edges=edges;
@@ -46,13 +46,13 @@ class DikstraImpl{
 	public int getDist(Node n1, Node n2){
 		for(Edge e:edges){
 			if(e.getFromNode()==n1 && e.getToNode()==n2){
-				return (int) e.getDist();
+				return e.getDist();
 			}
 		}
 		return (int) MyConstants.inf;
 	}
 	public ArrayList<Node> getAdjNodes(Node n){
-		ArrayList<Node> an= new ArrayList<Node>();
+		ArrayList<Node> an= new ArrayList<>();
 		for(Edge e:edges){
 			if(e.getFromNode()==n){
 				an.add(e.getToNode());
@@ -62,13 +62,13 @@ class DikstraImpl{
 	}
 	
 	Boolean anyUnvisted(){
-		return (nodes.size()==visitedcount)?false:true;
+		return nodes.size() != visitedcount;
 	}
 	
 	ArrayList<Edge> myalgo(Node start, Node end){	
 		nos.get(start).shortdist=0;
 		//nos.get(start).visited=true;
-		Node n=null;
+		Node n;
 		while(anyUnvisted()){//continue if there are any unvisited nodes 
 			//get node with least shortDist value among all unvisited nodes
 			n=null;

@@ -21,8 +21,7 @@ public int getDist(){
 }
 @Override
 public Rectangle2D getBounds2D() {
-	Rectangle2D r=new Rectangle2D.Double(p1.getX(),p1.getY(),p2.getX()-p1.getX(),p2.getY()-p1.getY());
-	return r;
+	return new Rectangle2D.Double(p1.getX(),p1.getY(),p2.getX()-p1.getX(),p2.getY()-p1.getY());
 }
 @Override
 public MyNode getP1() {

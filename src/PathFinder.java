@@ -13,7 +13,7 @@ public class PathFinder {
 
     private HashSet<Node> visitedNodes = new HashSet<>();
     HashMap<Node, Integer> nodeDist = new HashMap<>();
-    private int uniquePathCount = 0;
+    //private int uniquePathCount = 0;
 
     ArrayList<Edge> p_edges;
     ArrayList<Edge> bestPath;

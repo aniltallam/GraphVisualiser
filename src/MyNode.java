@@ -17,17 +17,7 @@ public class MyNode extends java.awt.geom.Point2D.Double implements Node {
 		this.name = name;
 	}
 
-	public void setX(double x) {
-		this.x = x;
-	}
-
-	public void setY(double y) {
-		this.y = y;
-	}
 	double x,y;
-	public MyNode() {
-		super();
-	}
 
 	public MyNode(double i, double j, String s) {
 		super(i,j);

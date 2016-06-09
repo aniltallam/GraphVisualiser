@@ -128,11 +128,10 @@ public class MyFrame extends JFrame {
 
 		this.add(p,BorderLayout.WEST);
 	}
-	protected void save() {
+	private void save() {
 		File dataf = new File("dataf.txt");
-		BufferedWriter nbr=null;
 		try{
-			nbr = new BufferedWriter(new FileWriter(dataf));
+			BufferedWriter nbr = new BufferedWriter(new FileWriter(dataf));
 			for(MyNode mp: dp.graph.nodes){
 				String str = mp.getName()+","+mp.getX()+","+mp.getY();
 				nbr.write(str);
@@ -150,12 +149,12 @@ public class MyFrame extends JFrame {
 			DrawPanel.jl.setText("Error Saving");
 		}
 	}
-	void load(){
+	private void load(){
 		File dataf = new File("dataf.txt");
 		BufferedReader nbr=null;
 		try{
 			nbr = new BufferedReader(new FileReader(dataf));
-			String line=null;
+			String line;
 			Boolean nowedges=false;
 			while((line=nbr.readLine()) != null){
 				if(line.trim().equals("Edges")){

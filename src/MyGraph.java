@@ -6,16 +6,16 @@ import java.util.ArrayList;
  * Created by Anil Tallam
  */
 class MyGraph {
-	ArrayList<MyNode> nodes=new ArrayList<MyNode>();
-    ArrayList<MyEdge> edges=new ArrayList<MyEdge>();
-    
-    ArrayList<MyNode> nodecolor=new ArrayList<MyNode>();
-    ArrayList<MyEdge> edgecolor=new ArrayList<MyEdge>();
+	ArrayList<MyNode> nodes= new ArrayList<>();
+    ArrayList<MyEdge> edges= new ArrayList<>();
+
+    ArrayList<MyNode> nodecolor= new ArrayList<>();
+    ArrayList<MyEdge> edgecolor= new ArrayList<>();
 	
 //Functions Used by UI classes
 
 	public void removeAdjacentEdges(MyNode mp) {
-		ArrayList<MyEdge> els=new ArrayList<MyEdge>();
+		ArrayList<MyEdge> els= new ArrayList<>();
 		for(MyEdge me:edges){
 			if(me.p1==mp || me.p2==mp){
 				els.add(me);
